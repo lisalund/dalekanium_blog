@@ -7,17 +7,14 @@
 		<h1>Dalekanium</h1>
 	</div>
 
-	<div>
-		<p>Published: 2016-02-25, 15:43</p>
-		<h3><a href="">My first blog post</a></h3>
-		<p>Lorem ipsum dolor sit amet, sale nusquam an cum. Elitr quidam cetero pro ad, alia movet simul in nam, adipisci nominati imperdiet pro te. Sea an causae oporteat, at dico suscipiantur sit. Nec discere nominati principes at. Mei eu eros nemore incorrupte, ex fugit eripuit verterem eam. Mollis tacimates prodesset est ea, ut ludus dicant facilisis sed. Illud laudem pro te, tantas melius pri in.</p>
-	</div>
-
-	<div>
-		<p>Published: 2016-02-25</p>
-		<h3><a href="">And then there were two </a></h3>
-		<p>Lorem ipsum dolor sit amet, sale nusquam an cum. Elitr quidam cetero pro ad, alia movet simul in nam, adipisci nominati imperdiet pro te. Sea an causae oporteat, at dico suscipiantur sit. Nec discere nominati principes at. Mei eu eros nemore incorrupte, ex fugit eripuit verterem eam. Mollis tacimates prodesset est ea, ut ludus dicant facilisis sed. Illud laudem pro te, tantas melius pri in.</p>
-	</div>
+	{% for post in posts %}
+		<div>
+			<p>Pubished: {{ post.published_date }}
+			<h1><a href="">{{ post.title }}</a></h1>
+			{{ post.text|linebreaks }}</p>
+			<br>
+		</div>
+	{% endfor %}
 
 </body>
 </html>
