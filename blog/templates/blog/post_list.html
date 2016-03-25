@@ -1,10 +1,14 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-{% for post in posts %}
+{% for post in posts reversed %}
 	<div class="post">
     	<div class="date">
-            <p>published: {{ post.published_date }}</p>
+            <p>Published: {{ post.published_date }}
+            {% if post.edited_date %}
+            	 <br> Edited: {{ post.edited_date }} 
+            {% endif %}
+            </p>
         </div>
         <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
         <p>{{ post.text|linebreaks }}</p>
